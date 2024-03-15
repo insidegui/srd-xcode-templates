@@ -8,7 +8,7 @@
 	<string>com.apple.dt.unit.commandLineTool.iOS</string>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.applicationBase</string>
+		<string>com.apple.dt.unit.applicationBase.research</string>
 		<string>com.apple.dt.unit.iosBase.research</string>
 	</array>
 	<key>Concrete</key>
@@ -70,46 +70,6 @@
 			</array>
 			<key>Units</key>
 			<dict>
-				<key>C</key>
-				<dict>
-					<key>Nodes</key>
-					<array>
-						<string>main.c:comments</string>
-						<string>main.c:include</string>
-						<string>main.c:main:content</string>
-					</array>
-					<key>Definitions</key>
-					<dict>
-						<key>main.c:include</key>
-						<string>#include &lt;stdio.h&gt;
-</string>
-						<key>main.c:main:content</key>
-						<string>// insert code here...
-printf(&quot;Hello, World!\n&quot;);
-return 0;
-</string>
-					</dict>
-				</dict>
-				<key>C++</key>
-				<dict>
-					<key>Nodes</key>
-					<array>
-						<string>main.cpp:comments</string>
-						<string>main.cpp:include</string>
-						<string>main.cpp:main:content</string>
-					</array>
-					<key>Definitions</key>
-					<dict>
-						<key>main.cpp:include</key>
-						<string>#include &lt;iostream&gt;
-</string>
-						<key>main.cpp:main:content</key>
-						<string>// insert code here...
-std::cout &lt;&lt; &quot;Hello, World!\n&quot;;
-return 0;
-</string>
-					</dict>
-				</dict>
 				<key>Objective-C</key>
 				<dict>
 					<key>Nodes</key>
@@ -162,25 +122,24 @@ return 0;
 					</array>
 					<key>Nodes</key>
 					<array>
-						<string>main.swift:comments</string>
-						<string>main.swift:include</string>
-						<string>main.swift:main:content</string>
+						<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
 					</array>
 					<key>Definitions</key>
 					<dict>
-						<key>main.swift:include</key>
-						<string>import Foundation
-</string>
-						<key>main.swift:main</key>
+						<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
 						<dict>
-							<key>Beginning</key>
-							<string></string>
-							<key>End</key>
-							<string></string>
+							<key>Path</key>
+							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
+							<key>SortOrder</key>
+							<integer>10</integer>
+							<key>TargetIdentifiers</key>
+							<array/>
+							<key>RequiredOptions</key>
+							<dict>
+								<key>languageChoice</key>
+								<string>Swift</string>
+							</dict>
 						</dict>
-						<key>main.swift:main:content</key>
-						<string>print(&quot;Hello, World!&quot;)
-</string>
 					</dict>
 				</dict>
 			</dict>
@@ -188,15 +147,6 @@ return 0;
 	</array>
 	<key>Definitions</key>
 	<dict>
-		<key>*:main</key>
-		<dict>
-			<key>Beginning</key>
-			<string>int main(int argc, const char * argv[]) {</string>
-			<key>End</key>
-			<string>}</string>
-			<key>Indent</key>
-			<integer>1</integer>
-		</dict>
 		<key>___PACKAGENAMEASIDENTIFIER___.entitlements</key>
 		<dict>
 			<key>Path</key>

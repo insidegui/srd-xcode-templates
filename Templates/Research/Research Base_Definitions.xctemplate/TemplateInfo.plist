@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.iosBase.research_Definitions</string>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Definitions</key>
+					<dict>
+						<key>*:implementation:viewDidLoad</key>
+						<dict>
+							<key>Beginning</key>
+							<string>- (void)viewDidLoad {
+    [super viewDidLoad];
+    // Do any additional setup after loading the view.</string>
+							<key>End</key>
+							<string>}
+</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+					</dict>
+				</dict>
+				<key>Swift</key>
+				<dict>
+					<key>RequiredOptions</key>
+					<dict>
+						<key>appLifecycle</key>
+						<string>Cocoa</string>
+					</dict>
+					<key>Definitions</key>
+					<dict>
+						<key>*:imports:importCocoa</key>
+						<string>import UIKit</string>
+						<key>*:imports:importFoundation</key>
+						<string>import Foundation</string>
+						<key>*:implementation:viewDidLoad</key>
+						<dict>
+							<key>Beginning</key>
+							<string>override func viewDidLoad() {
+    super.viewDidLoad()
+    // Do any additional setup after loading the view.</string>
+							<key>End</key>
+							<string>}
+</string>
+							<key>Indent</key>
+							<integer>1</integer>
+						</dict>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+	</array>
+	<key>Definitions</key>
+	<dict>
+		<key>Info.plist:UISupportedInterfaceOrientations~iPhone</key>
+		<string>&lt;key&gt;UISupportedInterfaceOrientations&lt;/key&gt;
+&lt;array&gt;
+     &lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+     &lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;
+     &lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;
+&lt;/array&gt;
+</string>
+		<key>Info.plist:UISupportedInterfaceOrientations~iPad</key>
+		<string>&lt;key&gt;UISupportedInterfaceOrientations~ipad&lt;/key&gt;
+&lt;array&gt;
+    &lt;string&gt;UIInterfaceOrientationPortrait&lt;/string&gt;
+    &lt;string&gt;UIInterfaceOrientationPortraitUpsideDown&lt;/string&gt;
+    &lt;string&gt;UIInterfaceOrientationLandscapeLeft&lt;/string&gt;
+    &lt;string&gt;UIInterfaceOrientationLandscapeRight&lt;/string&gt;
+&lt;/array&gt;
+</string>
+		<key>*:imports:importCocoa</key>
+		<string>#import &lt;UIKit/UIKit.h&gt;</string>
+		<key>*:imports:importCocoaForUmbrellaHeader</key>
+		<string>#import &lt;UIKit/UIKit.h&gt;</string>
+		<key>*:imports:importFoundation</key>
+		<string>#import &lt;Foundation/Foundation.h&gt;</string>
+		<key>*:imports:importFoundationForUmbrellaHeader</key>
+		<string>#import &lt;Foundation/Foundation.h&gt;</string>
+	</dict>
+</dict>
+</plist>

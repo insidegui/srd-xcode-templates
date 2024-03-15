@@ -8,12 +8,13 @@
 	<string>com.apple.dt.unit.launchDaemon.iOS</string>
 	<key>Ancestors</key>
 	<array>
-		<string>com.apple.dt.unit.commandLineTool.iOS</string>
+		<string>com.apple.dt.unit.applicationBase.research</string>
+		<string>com.apple.dt.unit.iosBase.research</string>
 	</array>
 	<key>Concrete</key>
 	<true/>
 	<key>SortOrder</key>
-	<integer>51</integer>
+	<integer>50</integer>
 	<key>Description</key>
 	<string>This template creates a launch daemon for iOS.</string>
 	<key>Image</key>
@@ -48,21 +49,129 @@
 		</dict>
 	</array>
 	<key>Options</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>languageChoice</string>
+			<key>Name</key>
+			<string>Language:</string>
+			<key>Description</key>
+			<string>The primary implementation language for the command-line tool</string>
+			<key>Default</key>
+			<string>Swift</string>
+			<key>Type</key>
+			<string>popup</string>
+			<key>Values</key>
+			<array>
+				<string>Swift</string>
+				<string>Objective-C</string>
+			</array>
+			<key>Units</key>
+			<dict>
+				<key>Objective-C</key>
+				<dict>
+					<key>Nodes</key>
+					<array>
+						<string>main.m:comments</string>
+						<string>main.m:include</string>
+						<string>main.m:main:content</string>
+					</array>
+					<key>Definitions</key>
+					<dict>
+						<key>main.m:include</key>
+						<string>#import &lt;Foundation/Foundation.h&gt;
+</string>
+						<key>main.m:main:content</key>
+						<string>@autoreleasepool {
+    // insert code here...
+    NSLog(@&quot;Hello, World!&quot;);
+}
+return 0;
+</string>
+					</dict>
+				</dict>
+				<key>Swift</key>
+				<dict>
+					<key>Project</key>
+					<dict>
+						<key>Configurations</key>
+						<dict>
+							<key>Debug</key>
+							<dict>
+								<key>SWIFT_OPTIMIZATION_LEVEL</key>
+								<string>-Onone</string>
+							</dict>
+							<key>Release</key>
+							<dict>
+								<key>SWIFT_COMPILATION_MODE</key>
+								<string>wholemodule</string>
+							</dict>
+						</dict>
+					</dict>
+					<key>Targets</key>
+					<array>
+						<dict>
+							<key>SharedSettings</key>
+							<dict>
+								<key>SWIFT_VERSION</key>
+								<string>5.0</string>
+							</dict>
+						</dict>
+					</array>
+					<key>Nodes</key>
+					<array>
+						<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
+					</array>
+					<key>Definitions</key>
+					<dict>
+						<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
+						<dict>
+							<key>Path</key>
+							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
+							<key>SortOrder</key>
+							<integer>10</integer>
+							<key>TargetIdentifiers</key>
+							<array/>
+						</dict>
+					</dict>
+				</dict>
+			</dict>
+		</dict>
+	</array>
 	<key>Definitions</key>
 	<dict>
+		<key>___PACKAGENAMEASIDENTIFIER___.entitlements</key>
+		<dict>
+			<key>Path</key>
+			<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+			<key>SortOrder</key>
+			<integer>1000</integer>
+			<key>TargetIdentifiers</key>
+			<array/>
+		</dict>
+		<key>Info.plist</key>
+		<dict>
+			<key>Path</key>
+			<string>Info.plist</string>
+			<key>SortOrder</key>
+			<integer>1000</integer>
+			<key>TargetIdentifiers</key>
+			<array/>
+		</dict>
 		<key>___VARIABLE_bundleIdentifier___.plist</key>
 		<dict>
 			<key>Path</key>
 			<string>___VARIABLE_bundleIdentifier___.plist</string>
 			<key>SortOrder</key>
-			<integer>1000</integer>
+			<integer>1001</integer>
 			<key>TargetIdentifiers</key>
 			<array/>
 		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
+		<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+		<string>Info.plist</string>
 		<string>___VARIABLE_bundleIdentifier___.plist</string>
 	</array>
 </dict>
