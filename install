@@ -1,0 +1,29 @@
+#!/bin/bash
+
+SOURCEDIR="./Templates/Research"
+TEMPLATEDIR="$HOME/Library/Developer/Xcode/Templates"
+ISUPDATE=0
+
+if [ ! -d "$SOURCEDIR" ]; then
+    echo "Research directory not found in $SOURCEDIR, please run this script from within the srd-xcode-templates project directory"
+    exit 1
+fi
+
+if [ ! -d "$TEMPLATEDIR" ]; then
+    echo "Creating Templates directory at $TEMPLATEDIR"
+    mkdir -p "$TEMPLATEDIR" || { echo "Failed to create templates directory at $TEMPLATEDIR"; exit 1; }
+fi
+
+if [ -d "$TEMPLATEDIR/Research" ]; then
+    ISUPDATE=1
+fi
+
+echo "Installing Research templates"
+
+cp -Rf "$SOURCEDIR" "$TEMPLATEDIR" || { echo "Failed to copy Research directory into Templates directory"; exit 1; }
+
+if [ $ISUPDATE -eq 1 ]; then
+    echo "Templates updated! Restart Xcode before using them."
+else
+    echo "Templates installed! Restart Xcode before using them."
+fi
