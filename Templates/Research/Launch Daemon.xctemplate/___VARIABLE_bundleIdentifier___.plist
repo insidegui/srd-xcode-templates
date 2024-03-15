@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>EnablePressuredExit</key>
+	<false/>
+	<key>EnableTransactions</key>
+	<false/>
+	<key>Label</key>
+	<string>___VARIABLE_bundleIdentifier___</string>
+	<key>EnvironmentVariables</key>
+	<dict/>
+	<key>ProgramArguments</key>
+	<array>
+		<string>/usr/bin/___PACKAGENAMEASIDENTIFIER___</string>
+	</array>
+	<key>RunAtLoad</key>
+	<true/>
+	<key>KeepAlive</key>
+	<true/>
+	<key>ThrottleInterval</key>
+	<integer>2</integer>
+	<key>MachServices</key>
+	<dict>
+		<key>___VARIABLE_bundleIdentifier___</key>
+		<true/>
+	</dict>
+</dict>
+</plist>

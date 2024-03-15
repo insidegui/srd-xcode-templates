@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.Xcode3.ProjectTemplateUnitKind</string>
+	<key>Identifier</key>
+	<string>com.apple.dt.unit.launchDaemon.iOS</string>
+	<key>Ancestors</key>
+	<array>
+		<string>com.apple.dt.unit.commandLineTool.iOS</string>
+	</array>
+	<key>Concrete</key>
+	<true/>
+	<key>SortOrder</key>
+	<integer>51</integer>
+	<key>Description</key>
+	<string>This template creates a launch daemon for iOS.</string>
+	<key>Image</key>
+	<dict>
+		<key>SystemSymbolName</key>
+		<string>bolt.horizontal.circle.fill</string>
+	</dict>
+	<key>Targets</key>
+	<array>
+		<dict>
+			<key>ProductType</key>
+			<string>com.apple.product-type.tool</string>
+			<key>TargetIdentifier</key>
+			<string>com.apple.dt.commandLineToolTarget</string>
+			<key>SharedSettings</key>
+			<dict>
+				<key>CODE_SIGN_ENTITLEMENTS</key>
+				<string>___PACKAGENAME___/___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+				<key>INFOPLIST_FILE</key>
+				<string>___PACKAGENAME___/Info.plist</string>
+				<key>CREATE_INFOPLIST_SECTION_IN_BINARY</key>
+				<string>YES</string>
+				<key>CODE_SIGN_STYLE</key>
+				<string>Manual</string>
+				<key>CODE_SIGN_IDENTITY</key>
+				<string>-</string>
+				<key>SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD</key>
+				<string>NO</string>
+				<key>SUPPORTS_MACCATALYST</key>
+				<string>NO</string>
+			</dict>
+		</dict>
+	</array>
+	<key>Options</key>
+	<array/>
+	<key>Definitions</key>
+	<dict>
+		<key>___VARIABLE_bundleIdentifier___.plist</key>
+		<dict>
+			<key>Path</key>
+			<string>___VARIABLE_bundleIdentifier___.plist</string>
+			<key>SortOrder</key>
+			<integer>1000</integer>
+			<key>TargetIdentifiers</key>
+			<array/>
+		</dict>
+	</dict>
+	<key>Nodes</key>
+	<array>
+		<string>___VARIABLE_bundleIdentifier___.plist</string>
+	</array>
+</dict>
+</plist>
