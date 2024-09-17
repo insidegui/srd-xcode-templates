@@ -17,7 +17,7 @@ Restart Xcode after installing the templates.
 
 ## Using the templates
 
-To create a new project with one of the templates, just go to `File > New Project`, you'll find the templates in the `iOS`, scroll to the bottom to find the `Research` section.
+To create a new project with one of the templates, just go to `File > New > Project`, you'll find the templates in the `iOS` section, scroll to the bottom to find the `Research` section.
 
 ![screenshot](./screenshot.jpg)
 
