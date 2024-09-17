@@ -35,6 +35,8 @@
 				<string>___PACKAGENAME___/___PACKAGENAMEASIDENTIFIER___.entitlements</string>
 				<key>INFOPLIST_FILE</key>
 				<string>___PACKAGENAME___/Info.plist</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>___PACKAGENAME___/Headers/BridgingHeader.h</string>
 				<key>CREATE_INFOPLIST_SECTION_IN_BINARY</key>
 				<string>YES</string>
 				<key>CODE_SIGN_STYLE</key>
@@ -45,6 +47,12 @@
 				<string>NO</string>
 				<key>SUPPORTS_MACCATALYST</key>
 				<string>NO</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>14.0</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>-</string>
 			</dict>
 		</dict>
 	</array>
@@ -127,11 +135,7 @@ return 0;
 						<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-							<key>SortOrder</key>
-							<integer>10</integer>
-							<key>TargetIdentifiers</key>
-							<array/>
+							<string>TemplateMain.swift</string>
 						</dict>
 					</dict>
 				</dict>
@@ -167,9 +171,19 @@ return 0;
 			<key>TargetIdentifiers</key>
 			<array/>
 		</dict>
+		<key>Headers/BridgingHeader.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Headers</string>
+			</array>
+			<key>Path</key>
+			<string>Headers/BridgingHeader.h</string>
+		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
+		<string>Headers/BridgingHeader.h</string>
 		<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
 		<string>Info.plist</string>
 		<string>___VARIABLE_bundleIdentifier___.plist</string>

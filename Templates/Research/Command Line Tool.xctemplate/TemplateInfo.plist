@@ -35,6 +35,8 @@
 				<string>___PACKAGENAME___/___PACKAGENAMEASIDENTIFIER___.entitlements</string>
 				<key>INFOPLIST_FILE</key>
 				<string>___PACKAGENAME___/Info.plist</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>___PACKAGENAME___/Headers/BridgingHeader.h</string>
 				<key>CREATE_INFOPLIST_SECTION_IN_BINARY</key>
 				<string>YES</string>
 				<key>CODE_SIGN_STYLE</key>
@@ -49,8 +51,8 @@
 				<string>14.0</string>
 				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
 				<string>18.0</string>
-				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
-				<string>___PACKAGENAME___/Headers/BridgingHeader.h</string>
+				<key>DEVELOPMENT_TEAM</key>
+				<string>-</string>
 			</dict>
 		</dict>
 	</array>
