@@ -45,6 +45,12 @@
 				<string>NO</string>
 				<key>SUPPORTS_MACCATALYST</key>
 				<string>NO</string>
+				<key>MACOSX_DEPLOYMENT_TARGET</key>
+				<string>14.0</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>18.0</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>___PACKAGENAME___/Headers/BridgingHeader.h</string>
 			</dict>
 		</dict>
 	</array>
@@ -65,8 +71,6 @@
 			<array>
 				<string>Swift</string>
 				<string>Objective-C</string>
-				<string>C++</string>
-				<string>C</string>
 			</array>
 			<key>Units</key>
 			<dict>
@@ -129,16 +133,7 @@ return 0;
 						<key>___PACKAGENAMEASIDENTIFIER___.swift</key>
 						<dict>
 							<key>Path</key>
-							<string>___PACKAGENAMEASIDENTIFIER___.swift</string>
-							<key>SortOrder</key>
-							<integer>10</integer>
-							<key>TargetIdentifiers</key>
-							<array/>
-							<key>RequiredOptions</key>
-							<dict>
-								<key>languageChoice</key>
-								<string>Swift</string>
-							</dict>
+							<string>TemplateMain.swift</string>
 						</dict>
 					</dict>
 				</dict>
@@ -165,9 +160,19 @@ return 0;
 			<key>TargetIdentifiers</key>
 			<array/>
 		</dict>
+		<key>Headers/BridgingHeader.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Headers</string>
+			</array>
+			<key>Path</key>
+			<string>Headers/BridgingHeader.h</string>
+		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
+		<string>Headers/BridgingHeader.h</string>
 		<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
 		<string>Info.plist</string>
 	</array>
