@@ -214,10 +214,20 @@ let contentView = ContentView().environment(\.managedObjectContext, context)
 			<key>TargetIdentifiers</key>
 			<array/>
 		</dict>
+		<key>Headers/BridgingHeader.h</key>
+		<dict>
+			<key>Group</key>
+			<array>
+				<string>Headers</string>
+			</array>
+			<key>Path</key>
+			<string>Headers/BridgingHeader.h</string>
+		</dict>
 	</dict>
 	<key>Nodes</key>
 	<array>
 		<string>___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+		<string>Headers/BridgingHeader.h</string>
 	</array>
 	<key>Project</key>
 	<dict>
@@ -240,6 +250,8 @@ let contentView = ContentView().environment(\.managedObjectContext, context)
 				<string></string>
 				<key>CODE_SIGN_ENTITLEMENTS</key>
 				<string>___PACKAGENAME___/___PACKAGENAMEASIDENTIFIER___.entitlements</string>
+				<key>SWIFT_OBJC_BRIDGING_HEADER</key>
+				<string>___PACKAGENAME___/Headers/BridgingHeader.h</string>
 			</dict>
 		</dict>
 	</array>
