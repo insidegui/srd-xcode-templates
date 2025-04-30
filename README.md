@@ -23,7 +23,7 @@ Restart Xcode after installing the templates.
 
 To create a new project with one of the templates, just go to `File > New > Project`, you'll find the templates in the `iOS` section, scroll to the bottom to find the `Research` section.
 
-![screenshot](./screenshot.jpg)
+![screenshot](./screenshot2.jpg)
 
 All templates include the following:
 
@@ -33,3 +33,9 @@ All templates include the following:
 - Configuration for adhoc signing with the above entitlements
 - `Info.plist` section in the binary
 - Set the [research SDK](https://github.com/insidegui/researchsdk) as the base SDK
+
+The "Injected Library" template:
+
+- Configures the target for the `arm64e` architecture, which is required to inject into system processes on modern devices
+- Includes helpers for interposing and swizzling
+- Automatically configures a singleton `os_log` instance that can be used throughout the injected library for debugging
