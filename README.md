@@ -25,7 +25,7 @@ To create a new project with one of the templates, just go to `File > New > Proj
 
 ![screenshot](./screenshot2.jpg)
 
-All templates include the following:
+All executable templates include the following:
 
 - A preset Objective-C bridging header, which is often required to interface with SPI
 - A basic `Info.plist` configured with the project's details
