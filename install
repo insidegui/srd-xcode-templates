@@ -1,8 +1,27 @@
 #!/bin/bash
 
-SOURCEDIR="./Templates/Research"
+set -e
+
+source env.zsh
+
 TEMPLATEDIR="$HOME/Library/Developer/Xcode/Templates"
 ISUPDATE=0
+
+./setsdk
+
+if [ $? -ne 0 ]; then
+    echoRed "ERROR: Failed to set up templates with research SDK"
+    exit 1
+fi
+
+if [ ! -f "$TEMP_RESEARCH_TEMPLATES_FILE" ]; then
+    echoRed "ERROR: Temporary file not found at '$TEMP_RESEARCH_TEMPLATES_FILE'. Something's wrong with the setsdk script!"
+    exit 1
+fi
+
+SOURCEDIR=$(cat temp.txt)
+
+rm temp.txt 2>/dev/null || true
 
 if [ ! -d "$SOURCEDIR" ]; then
     echo "Research directory not found in $SOURCEDIR, please run this script from within the srd-xcode-templates project directory"

@@ -7,9 +7,13 @@ This repository provides Xcode templates to facilitate development of custom too
 - **Command Line Tool**: template for an adhoc-signed iOS cli executable
 - **Launch Daemon**: template for an adhoc-signed iOS launch daemon
 
-## Installation
+## Prerequisites
 
-Note: all templates are configured to use my custom [research SDK](https://github.com/insidegui/researchsdk), if you'd like to use the regular iOS SDK, you can change the build settings after creating your project.
+All templates are configured to use my custom [research SDK](https://github.com/insidegui/researchsdk), which allows ad-hoc signing and removes a bunch of unavailability annotations for iOS. If you'd like to use the regular iOS SDK, you can change the build settings after creating your project.
+
+Since Xcode 16.3, specifying the custom SDK by identifier no longer works, so the provided install script will attempt to find the research SDK in the Xcode version that's currently selected (via `xcode-select -s`) then configure the templates to use the research SDK at the correct path. The install script may be run again if the location where Xcode is installed changes in order to update the templates with the new SDK path.
+
+## Installation
 
 To install the templates, just clone the repo and run the `install` script, or manually copy the `Templates/Research` folder into `~/Library/Developer/Xcode/Templates/`.
 

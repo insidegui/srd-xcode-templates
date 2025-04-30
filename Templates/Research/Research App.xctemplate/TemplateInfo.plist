@@ -234,8 +234,6 @@ let contentView = ContentView().environment(\.managedObjectContext, context)
 		<dict>
 			<key>SharedSettings</key>
 			<dict>
-				<key>SDKROOT</key>
-				<string>iphoneos.internal</string>
 				<key>CODE_SIGN_IDENTITY</key>
 				<string>-</string>
 				<key>DEVELOPMENT_TEAM</key>

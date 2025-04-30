@@ -1,0 +1,59 @@
+#!/bin/zsh
+
+set -e
+
+source env.zsh
+
+echoErr ""
+
+INSTALL_TEMP_DIR=$(mktemp -d)
+DEFAULT_SDK_ID=iphoneos
+RESEARCH_SDK_ID=iphoneos.internal
+
+RESEARCH_SDK_PATH=$(xcrun --show-sdk-path --sdk "$RESEARCH_SDK_ID" 2>/dev/null)
+
+if [ $? -ne 0 ]; then
+    echoYellow "The research SDK was not found in the Xcode version that's currently selected.\n\nIf you'd like to use the standard iOS SDK for the research templates, press any key to continue.\nIf you'd like to install the research SDK first, press Ctrl+C to cancel then come back later.\n\nThe current Xcode is at '$(xcode-select -p)'. You can use 'sudo xcode-select -s <path>' to change it."
+    read
+    
+    echoErr ""
+    
+    RESEARCH_SDK_PATH=$(xcrun --show-sdk-path --sdk "$DEFAULT_SDK_ID" 2>/dev/null)
+    
+    if [ $? -ne 0 ]; then
+        echoRed "ERROR: Couldn't find built-in iOS SDK. Is Xcode installed and selected with 'xcode-select -s'?"
+        exit 1
+    fi
+fi
+
+if [ ! -d "$RESEARCH_SDK_PATH" ]; then
+    echoRed "ERROR: SDK not found at $RESEARCH_SDK_PATH"
+    exit 1
+fi
+
+echoGreen "Setting up templates with SDK at '$RESEARCH_SDK_PATH'"
+
+function setPlistProperty {
+    KEY=$1
+    VALUE=$2
+    PLIST_PATH=$3
+
+    ORIGINAL_VALUE=$(/usr/libexec/PlistBuddy -c "Print $KEY" "$PLIST_PATH" 2>/dev/null || true)
+
+    if [ -z "$ORIGINAL_VALUE" ]
+    then
+        return 0
+    fi
+
+    if ! [[ $ORIGINAL_VALUE == "$VALUE" ]]; then
+        /usr/libexec/PlistBuddy -c "Set $KEY $VALUE" "$PLIST_PATH"
+    fi
+}
+
+cp -cR Templates "$INSTALL_TEMP_DIR" || { echoRed "Failed to copy templates to temporary directory."; exit 1; }
+
+find "$INSTALL_TEMP_DIR" -type f -name TemplateInfo.plist -prune -print0 | while IFS= read -r -d '' FILE; do
+    setPlistProperty ":Project:SDK" "$RESEARCH_SDK_PATH" "$FILE"
+done
+
+echo "$INSTALL_TEMP_DIR/Templates/Research" > "$TEMP_RESEARCH_TEMPLATES_FILE"
