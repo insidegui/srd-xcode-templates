@@ -60,11 +60,11 @@
 	</array>
 	<key>Nodes</key>
 	<array>
-		<string>___PACKAGENAMEASIDENTIFIER___.h</string>
-		<string>___PACKAGENAMEASIDENTIFIER___.m</string>
 		<string>Interpose.h</string>
 		<string>SwizzlingHelper.h</string>
 		<string>SwizzlingHelper.m</string>
+		<string>___PACKAGENAMEASIDENTIFIER___.h</string>
+		<string>___PACKAGENAMEASIDENTIFIER___.m</string>
 	</array>
 	<key>Definitions</key>
 	<dict>
