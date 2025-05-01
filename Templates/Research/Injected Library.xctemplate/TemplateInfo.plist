@@ -38,6 +38,8 @@
 				<string>___VARIABLE_bundleIdentifierPrefix:bundleIdentifier___.___VARIABLE_productName:RFC1034Identifier___</string>
 				<key>ARCHS</key>
 				<string>arm64e</string>
+				<key>LD_DYLIB_INSTALL_NAME</key>
+				<string>@rpath/$(EXECUTABLE_PATH)</string>
 			</dict>
 			<key>BuildPhases</key>
 			<array>
