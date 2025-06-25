@@ -53,7 +53,7 @@ function setPlistProperty {
 cp -cR Templates "$INSTALL_TEMP_DIR" || { echoRed "Failed to copy templates to temporary directory."; exit 1; }
 
 find "$INSTALL_TEMP_DIR" -type f -name TemplateInfo.plist -prune -print0 | while IFS= read -r -d '' FILE; do
-    setPlistProperty ":Project:SDK" "$RESEARCH_SDK_PATH" "$FILE"
+    setPlistProperty ":Project:SDK" "$RESEARCH_SDK_PATH" "$FILE" || { echoRed "Failed to edit template plist $FILE."; exit 1; }
 done
 
 echo "$INSTALL_TEMP_DIR/Templates/Research" > "$TEMP_RESEARCH_TEMPLATES_FILE"
